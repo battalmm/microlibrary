@@ -11,26 +11,26 @@ import java.util.stream.Collectors;
 
 @Service
 public class BookService {
-    private final BookRepository repository;
+    private final BookRepository bookRepository;
 
     public BookService(BookRepository repository) {
-        this.repository = repository;
+        this.bookRepository = repository;
     }
 
     public List<BookDto> getAllBooks(){
-        return repository.findAll()
+        return bookRepository.findAll()
                 .stream()
                 .map(BookDto::toDto)
                 .collect(Collectors.toList());
     }
 
     public BookIdDto findByIsbn(String isbn){
-        return BookIdDto.toDto(repository.findByIsbn(isbn)
+        return BookIdDto.toDto(bookRepository.findByIsbn(isbn)
                 .orElseThrow(() -> new BookNotFoundException("Book could not found by isbn: " + isbn)));
     }
 
     public  BookDto findBookDetailsById(Long id){
-        return repository.findById(id)
+        return bookRepository.findById(id)
                 .map(BookDto::toDto)
                 .orElseThrow(() -> new BookNotFoundException("Book could not find by id: " + id));
     }

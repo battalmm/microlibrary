@@ -14,6 +14,7 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name = "book")
 public class Book {
     @Id
+    @Column(name = "book_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
@@ -21,5 +22,4 @@ public class Book {
     private Integer bookYear;
     private String pressName;
     private String isbn;
-
 }

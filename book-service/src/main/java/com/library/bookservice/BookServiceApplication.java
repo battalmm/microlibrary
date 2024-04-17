@@ -13,10 +13,10 @@ import java.util.List;
 @SpringBootApplication
 public class BookServiceApplication implements CommandLineRunner {
 
-	private final BookRepository repository;
+	private final BookRepository bookRepository;
 
 	public BookServiceApplication(BookRepository repository) {
-		this.repository = repository;
+		this.bookRepository = repository;
 	}
 
 	public static void main(String[] args) {
@@ -31,7 +31,7 @@ public class BookServiceApplication implements CommandLineRunner {
 		Book book2 = new Book(2L,"Yüzüklerin Efendisi", "J.R.R Tolkien", 1960, "Metis Yayıncılık", "456789");
 		Book book3 = new Book(3L,"Harry Potter ve Felsefe Taşı","J. K. Rowling", 1997,  "YKB Yayınları", "987654");
 
-		List<Book> bookList = repository.saveAll(Arrays.asList(book1, book2, book3));
+		List<Book> bookList = bookRepository.saveAll(Arrays.asList(book1, book2, book3));
 
 		System.out.println(bookList);
 	}
