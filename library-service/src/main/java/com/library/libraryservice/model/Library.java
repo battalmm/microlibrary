@@ -22,6 +22,6 @@ public class Library {
     private Long id;
 
     @ElementCollection
-    private List<String> userBook = new ArrayList<>();
+    private List<Long> userBook = new ArrayList<>();
 
 }

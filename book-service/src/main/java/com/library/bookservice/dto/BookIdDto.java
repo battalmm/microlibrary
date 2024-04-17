@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class BookIdDto {
 
-    private Long id;
+    private Long bookId;
     private String isbn;
 
     public static BookIdDto toDto(Book book){

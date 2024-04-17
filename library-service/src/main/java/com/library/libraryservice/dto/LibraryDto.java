@@ -15,6 +15,6 @@ import java.util.List;
 public class LibraryDto {
 
     private Long id;
-    private List<String> userBook;
+    private List<BookDto> userBooks;
 
 }

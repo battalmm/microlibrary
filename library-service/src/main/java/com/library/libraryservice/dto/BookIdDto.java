@@ -13,9 +13,4 @@ public class BookIdDto {
 
     private Long bookId;
     private String isbn;
-
-    public static BookIdDto toDto(Long bookId,String isbn){
-        return new BookIdDto(bookId,isbn);
-    }
-
 }
